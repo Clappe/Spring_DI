@@ -20,4 +20,54 @@
             <bean id="InnerBeans_Inject_SpellChecker" class="com.DepedenceInject.InnerBeans_Inject_SpellChecker"></bean>
         </property>
     </bean>
+
+    <bean id="CollectionInjection_JavaCollection" class="com.DepedenceInject.CollectionInjection_JavaCollection">
+        <property name="addressList">
+            <list>
+                <!--传递集合中的值-->
+                <value>INDIA</value>
+                <value>Pakistan</value>
+                <value>USA</value>
+                <value>USA</value>
+                <!--传递bean的引用-->
+                <ref bean="CollectionInjection_Address"/>
+            </list>
+        </property>
+        
+        <property name="addressSet">
+            <set>
+                <value>INDIA</value>
+                <value>Pakistan</value>
+                <value>USA</value>
+                <value>USA</value>
+                <ref bean="CollectionInjection_Address"/>
+            </set>
+        </property>
+        
+        <property name="addressMap">
+            <map>
+                <entry key="1" value="INDIA"></entry>
+                <entry key="2" value="Pakistan"/>
+                <entry key="3" value="USA"/>
+                <entry key="4" value="USA"/>
+                <entry key="5" value-ref="CollectionInjection_Address"/>
+            </map>
+        </property>
+        
+        <property name="addressProperties">
+            <props>
+                <prop key="one">INDIA</prop>
+                <prop key="two">Pakistan</prop>
+                <prop key="three">USA</prop>
+                <prop key="four">USA</prop>
+            </props>
+        </property>
+
+        <!--传入空字符串-->
+        <property name="address" value=""/>
+        <!--传入NULL值-->
+        <property name="email"><null></null></property>
+    </bean>
+
+    <bean id="CollectionInjection_Address" class="com.DepedenceInject.CollectionInjection_Address"></bean>
 </beans>
