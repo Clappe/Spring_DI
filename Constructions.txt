@@ -125,3 +125,16 @@
     3.2 创建SetterBased_DI_TextEditor.java和SetterBased_DI_SpellChecker.java以及测试函数SetterBased_DI_Main.java，编写
         代码，配置好xml文件并运行。
 
+4、Spring 注入内部 Beans
+
+    4.1 注入内部 Beans
+        正如你所知道的 Java 内部类是在其他类的范围内被定义的，同理，inner beans 是在其他 bean 的范围内定义的 bean。
+
+    4.2 创建InnerBeans_Inject_TextEditor.java和InnnerBeans_Inject_SpellChecker.java以及测试类InnerBeans_Inject_Maian.java，
+        编写代码并配置好bean,然后运行。bean的配置如下：
+               <bean id="InnerBeans_Inject_TextEditor" class="com.DepedenceInject.InnerBeans_Inject_TextEditor">
+                    <property name="innerBeans_inject_spellChecker">
+                        <bean id="InnerBeans_Inject_SpellChecker" class="com.DepedenceInject.InnerBeans_Inject_SpellChecker"></bean>
+                    </property>
+                </bean>
+

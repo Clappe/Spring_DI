@@ -14,4 +14,10 @@
     </bean>
     
     <bean id="SetterBased_DI_SpellChecker" class="com.DepedenceInject.SetterBased_DI_SpellChecker"></bean>
+
+    <bean id="InnerBeans_Inject_TextEditor" class="com.DepedenceInject.InnerBeans_Inject_TextEditor">
+        <property name="innerBeans_inject_spellChecker">
+            <bean id="InnerBeans_Inject_SpellChecker" class="com.DepedenceInject.InnerBeans_Inject_SpellChecker"></bean>
+        </property>
+    </bean>
 </beans>
