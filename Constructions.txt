@@ -116,3 +116,12 @@
         最后，如果你想要向一个对象传递一个引用，你需要使用 标签的 ref 属性，如果你想要直接传递值，
         那么你应该使用如上所示的 value 属性。
 
+3、Spring 基于设值函数的依赖注入
+
+    3.1 Spring 基于设值函数的依赖注入
+        当容器调用一个无参的构造函数或一个无参的静态 factory 方法来初始化你的 bean 后，通过容器在你的 bean 上调用
+        设值函数，基于设值函数的 DI 就完成了
+
+    3.2 创建SetterBased_DI_TextEditor.java和SetterBased_DI_SpellChecker.java以及测试函数SetterBased_DI_Main.java，编写
+        代码，配置好xml文件并运行。
+

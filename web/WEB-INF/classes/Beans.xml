@@ -8,4 +8,10 @@
 
     <bean id="ConstructorBased_DI_SpellChecker" class="com.DepedenceInject.ConstructorBased_DI_SpellChecker">
     </bean>
+    
+    <bean id="SetterBased_DI_TextEditor" class="com.DepedenceInject.SetterBased_DI_TextEditor">
+        <property name="setterBased_di_spellChecker" ref="SetterBased_DI_SpellChecker"/>
+    </bean>
+    
+    <bean id="SetterBased_DI_SpellChecker" class="com.DepedenceInject.SetterBased_DI_SpellChecker"></bean>
 </beans>
